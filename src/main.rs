@@ -1,14 +1,17 @@
+use rand::thread_rng;
+use rand::Rng;
 use std::io::stdin;
 
 fn main() {
-    println!("Guess the number!");
-    println!("Please input your guess.");
+    println!("-------- GUESS THE NUMBER --------\n");
+    println!("The computer is thinking of a number...");
+    println!("It's between 1 and 10.");
+    println!("Can you guess what it is?");
 
-    // let mut guess = String::new();
-    // let mut guess = "".to_string();
-    let mut guess = String::from("");
-    let byte_size = stdin().read_line(&mut guess).expect("Failed to read line");
+    let secret_number = thread_rng().gen_range(1..11);
+    let mut guess = String::new();
+    stdin().read_line(&mut guess).expect("Failed to read line");
 
-    println!("You guessed: {}", guess);
-    println!("Size: {}", byte_size);
+    println!("\nYou guessed {}", guess);
+    println!("The secret number is {}", secret_number);
 }

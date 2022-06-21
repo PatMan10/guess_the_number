@@ -16,7 +16,7 @@ fn main() {
 
         let mut guess = String::new();
 
-        stdin().read_line(&mut guess).expect("Failed to read line");
+        stdin().read_line(&mut guess).expect("Failed to read line.");
 
         let guess: i32 = match guess.trim().parse() {
             Ok(n) => n,
@@ -28,7 +28,7 @@ fn main() {
             Ordering::Greater => println!("Too big!\n"),
             Ordering::Equal => {
                 println!("You guessed it!");
-                println!("The secret number is {}", rand_number);
+                println!("The number is {}.", rand_number);
                 break;
             }
         }
